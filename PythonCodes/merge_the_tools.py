@@ -1,7 +1,6 @@
 # Answer for question: https://www.hackerrank.com/challenges/merge-the-tools/problem?isFullScreen=true
 
 def merge_the_tools(string, k):
-    substring1 = ""
     for i in range(0,len(string),k):
         substring = string[i:k+i]
         print("".join(list(set(substring))))
