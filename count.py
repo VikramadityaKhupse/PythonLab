@@ -47,3 +47,15 @@ print(count("gggggg", "gg", True))
 
 # print(count("gggggg", "gg", True))
 
+# (base) vikramaditya@vikramaditya-Victus:~/Desktop/Python$ time vikram count.py (non-optmized)
+# 5
+
+# real	0m0.014s
+# user	0m0.014s
+# sys	0m0.000s
+# (base) vikramaditya@vikramaditya-Victus:~/Desktop/Python$ time vikram count.py (non-optmized)
+# 5
+
+# real	0m0.011s
+# user	0m0.007s
+# sys	0m0.003s
