@@ -24,3 +24,26 @@ print(count("gggggg", "gg", True))
 
 
 
+# OPTIMIZED VERSION:
+# def count(string, s, overlapping):
+#     output = 0
+#     s_len = len(s)
+
+#     if overlapping:
+#         i = 0
+#         while i <= len(string) - s_len:
+#             if string[i:i + s_len] == s:
+#                 output += 1
+#             i += 1
+#     else:
+#         i = 0
+#         while i <= len(string) - s_len:
+#             if string[i:i + s_len] == s:
+#                 output += 1
+#             i += s_len
+
+#     return output
+
+
+# print(count("gggggg", "gg", True))
+
