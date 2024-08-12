@@ -1,32 +1,30 @@
-def pattern(num):
-    spaces = num * 2 + 2
-    space = 3
-    for i in range(num - 1):
-        if i == 0:
-            print(' ' * spaces + '+' + ' ' * spaces)
-            spaces = spaces - 2
-        if i == num - 2:
-            print(' '*spaces + '+' + ' '*(space // 2) + '' + ' '*(space // 2) + '+')
-            spaces = spaces - 2
-            space += 4
-        else:
-            print(' ' * spaces + '+' + ' ' * space + '+')
-            spaces = spaces - 2
-            space += 4
+def pattern(n):
+    height = 2 * n + 1
+    mid = height // 2
 
-    spaces = 3
-    space = (num * 4) - 2
-    for i in range(num):
-        if i == num - 1:
-            spaces += 1
-            print(' ' * spaces + '-' + ' ' * space)
+    # Upper part
+    for i in range(mid):
+        for j in range(mid - i):
+            print(" ", end="")
+        for j in range(2 * i + 1):
+            if j == 0 or j == 2 * i:
+                print("+", end="")
+            else:
+                print(" ", end="")
+        print()
 
-            space = space - 4
-        else:
-            print(' ' * spaces + '-' + ' ' * space + '-')
-            spaces += 2
-            space = space - 4
+    # Center
+    print("+" + " " * (mid - 1) + "*" + " " * (mid - 1) + "+")
 
+    # Lower part
+    for i in range(mid - 1, -1, -1):
+        for j in range(mid - i):
+            print(" ", end="")
+        for j in range(2 * i + 1):
+            if j == 0 or j == 2 * i:
+                print("-", end="")
+            else:
+                print(" ", end="")
+        print()
 
-
-pattern(3)
+pattern(2)
