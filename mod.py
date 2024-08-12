@@ -1,6 +1,10 @@
-def mod(num1, num2):
-    while num1 >= num2:
-        num1 -= num2
-    return num1
-print(mod(3, 3))
-print(3%3)
+       
+def modulo(num1, num2):
+	if num2 == 0:
+        	raise ValueError("Division by zero is undefined.")
+	else:
+		quo = num1 // num2
+		return num1 - quo * num2
+		
+
+print(modulo2(15, -4))
