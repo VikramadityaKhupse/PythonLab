@@ -20,7 +20,8 @@ def count(string, s, overlapping):
     return output
 
 
-print(count("gggggg", "gg", True))
+def count2(string, s, overlapping):
+	pass
 
 
 
