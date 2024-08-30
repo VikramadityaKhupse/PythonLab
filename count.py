@@ -19,7 +19,7 @@ def count(string, s, overlapping):
 
     return output
 
-
+print(count("gggggg", "gg", not True))
 def count2(string, s, overlapping):
 	pass
 
@@ -54,6 +54,8 @@ def count2(string, s, overlapping):
 # real	0m0.014s
 # user	0m0.014s
 # sys	0m0.000s
+0
+
 # (base) vikramaditya@vikramaditya-Victus:~/Desktop/Python$ time vikram count.py (non-optmized)
 # 5
 

@@ -6,4 +6,4 @@ def modulo(num1, num2):
         return num1 - quo * num2
 
 
-print(modulo(15, -4))
+print(modulo(15, 4))

@@ -1,5 +1,8 @@
 def ends_with_a(text):
-    return "Accepted" if q0(text) else "Rejected"
+    if not text:
+        return "Rejected"
+    else:
+        return "Accepted" if q0(text) else "Rejected"
     
 
 def q0(text):
@@ -30,4 +33,4 @@ def q1(text):
     else:
         return False
 
-print(ends_with_a("babababbababbaba"))
+print(ends_with_a("abababababababaabbababaab"))

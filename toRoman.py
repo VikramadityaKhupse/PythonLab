@@ -10,7 +10,7 @@ def to_roman(value):
         if value.startswith("0b"):
             value = int(value, 2)
         elif value.startswith("0x"):
-            value = int(value, 6)
+            value = int(value, 16)
         elif value.startswith("0o"):
             value = int(value, 8)
         
@@ -25,4 +25,4 @@ def to_roman(value):
         i -= 1
     return output
 
-print(to_roman("0o6603"))
+print(to_roman("0xddd"))
