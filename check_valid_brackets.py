@@ -46,5 +46,6 @@ def get_valid_invalid_text_count(texts: list) -> tuple:
     return valid_count, invalid_count
 
 
-texts = ['[{(', 45, '()', '{{[[{[[]]}]]}}', 989]
+texts = ['[{(', [45, ("()"), ]]
 print(get_valid_invalid_text_count(texts))
+
