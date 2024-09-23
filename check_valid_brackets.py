@@ -24,7 +24,7 @@ def check_validity(text: str) -> str:
             return f"Invalid: Character '{char}' at position {index} is not a valid bracket."
     
     if stack:
-        return f"Invalid: Unbalanced opening bracket(s) remaining: {stack}."
+        return f"Invalid: Unbalanced brackets or other invalid characters remaining: {stack}."
     
     return "valid"
 
