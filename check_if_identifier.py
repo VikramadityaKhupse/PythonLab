@@ -1,9 +1,5 @@
 def isIdentifier(string):
-	if not string:
-		return False
-	elif string[0].isdigit():
-		return False
-	elif " "  in string:
+	if not string or string[0].isdigit() or " "  in string  :
 		return False
 	else:
 		return True
