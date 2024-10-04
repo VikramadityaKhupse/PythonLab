@@ -2,7 +2,9 @@ import time
 
 def checkPerformance(approaches):
 	time_taken = []
-	test = ["aba", "bbb", (1, 2, 22, 121, "bbb", ["bbb", 121]), []]
+	# test = ["aba", "bbb", (1, 2, 22, 121, "bbb", ["bbb", 121]), []]
+	test = [1, 2, 3, 4, 5, 6, 7]
+
 	for approach in approaches:
 		for _ in range(100):
 			start_time = time.time()
@@ -10,7 +12,8 @@ def checkPerformance(approaches):
 			end_time = time.time()
 			time_taken.append(end_time-start_time)
 	return list(zip(approaches, time_taken))
-	
+
+#____________________________________________________________________________________
 def approach1(l):
 	count = 0
 	if not l:
@@ -52,19 +55,33 @@ def approach3(objects):
 		count += isinstance(obj, str) and len(obj) % 5 == 3 and ispalindrome(obj)
 	return count 
 	
-def even_odd(l):
+ 
+ # ___________________________________________________________________________
+def odd_even1(l):
 	odd_count = 0
 	
 	for num in l:
-		odd_count += num%2
+		odd_count += num % 2
 		
 	return odd_count, len(l)-odd_count
+
+def odd_even2(l):
+	odd_count = 0
 	
-test = [(1, 2, 22, 121, "bbb", ["bbb", 121]), [], "aba", "bbb",]
+	for num in l:
+		if num % 2 != 0:
+			odd_count += 1
+		
+	return odd_count, len(l)-odd_count
+		
+	
+# test = [(1, 2, 22, 121, "bbb", ["bbb", 121]), [], "aba", "bbb",]
 test2 = [1, 2, 3, 4, 5, 6, 7]
-print(even_odd(test2))
-print(f"Approach 1: {approach1(test)}")
-print(f"Approach 2: {approach2(test)}")
-print(f"Approach 2: {approach3(test)}")
-print(checkPerformance([approach1, approach2, approach3]))
+print(odd_even1(test2))
+print(odd_even2(test2))
+
+# print(f"Approach 1: {approach1(test)}")
+# print(f"Approach 2: {approach2(test)}")
+# print(f"Approach 2: {approach3(test)}")
+print(checkPerformance([odd_even1, odd_even2]))
 
