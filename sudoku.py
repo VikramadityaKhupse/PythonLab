@@ -1,63 +1,50 @@
+import random
 def create_grid(rows, cols):
 
     dynamic_grid = []
     for row in range(rows):
-        dynamic_grid.append(dict().fromkeys(range(1, cols + 1), " "))
+        dynamic_grid.append(dict().fromkeys(range(0, cols ), " "))
     return dynamic_grid
 
 def print_grid(grid):
     col_len = len(grid)
+    
     print("\n")
-    print(" _ " * col_len)
+    print("___ " * col_len)
     for row in grid:
-        print("| ".join(f"{row[col]}" for col in range(1, col_len + 1)) + "|")
-        print(" _ " * col_len)
+        print("|".join(f" {row[col]} " for col in range(0, col_len )) + "|")
+        print("___ " * col_len)
     print("\n")
 
 
-def is_valid_move(grid, row, col, num):
-
-    for i in range(1, 10):
-        if grid[row][i] == num or grid[i][col] == num:
-            return False
 
 
-    subgrid_row_start = ((row - 1) // 3) * 3 + 1
-    subgrid_col_start = ((col - 1) // 3) * 3 + 1
-    for r in range(subgrid_row_start, subgrid_row_start + 3):
-        for c in range(subgrid_col_start, subgrid_col_start + 3):
-            if grid[r][c] == num:
-                return False
-    return True
+def fill_sudoku(grid, size):
+	p = set(range(1, size+1))
+	for row in range(size):
+		for col in range(size):
+			avail = set(list(grid[row].values()) + [r.get(col) for r in grid])
+			candi = list(p-avail)
+			grid[row][col] = candi[random.randint(0, len(candi)-1)]
+	print_grid(grid)
 
 
-def start_game():
 
-    grid = create_grid(9, 9)
+
+def initialize():
+	print("\t\tWelcome to sudoku!!")
+	
+	size = int(input("Enter size of grid: "))
+	grid = create_grid(size, size)
+	
+	fill_sudoku(grid, size)
     
+	
 
-    grid[1][1] = 5
-    grid[2][2] = 3
-    grid[3][3] = 7
-    print("Welcome to Sudoku!")
-    
-    while True:
-        print_grid(grid)
-        
 
-        row = int(input("Enter row (1-9): ")) -1 
-        col = int(input("Enter column (1-9): ")) -1
-        num = int(input("Enter number (1-9): "))
-        
 
-        if is_valid_move(grid, row, col, num):
-            grid[row][col] = num
-        else:
-            print("Invalid move. Try again.")
-        
+def sudoku():
+	initialize()
 
-        if input("Continue? (y/n): ") != "y":
-            break
-
-start_game()
+sudoku()
 
