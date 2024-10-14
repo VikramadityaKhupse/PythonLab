@@ -8,10 +8,10 @@ def create_grid(rows, col):
 def print_grid(grid):
     col = len(grid)
     print("\n")
-    print(" " + " ___" * col)
+    print("__ " * col)
     for row in grid:
-        print("|  ".join(f"{row[col]}" for col in range(1, col + 1)) + "|")
-        print(" " + " ___" * col)
+        print("| ".join(f"{row[col]}" for col in range(1, col + 1)) + "|")
+        print( "__ " * col)
     print("\n")
 
 
